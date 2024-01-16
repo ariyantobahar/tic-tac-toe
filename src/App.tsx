@@ -88,6 +88,11 @@ function App() {
   const changePlayer = () => {
     setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
   };
+
+  const resetScore = () => {
+    setScore(INITIAL_SCORE);
+    localStorage.removeItem("scores");
+  };
   const handleCellClick = (event: any) => {
     const cellIndex = Number(event.target.getAttribute("data-cell-index"));
 
@@ -124,6 +129,12 @@ function App() {
           </p>
           <p className="font-display text-white ">
             Player O wins: <span>{scores["O"]}</span>
+          </p>
+          <p
+            onClick={resetScore}
+            className="font-display text-black-500 bg-white w-20 p-2 rounded-lg text-center mt-5 cursor-pointer"
+          >
+            Reset
           </p>
         </div>
       </div>
