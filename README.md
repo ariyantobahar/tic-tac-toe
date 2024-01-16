@@ -1,2 +1,3 @@
-npm install
-npm run dev
+## Installing
+Installation instructions.
+npm install && npm run dev
